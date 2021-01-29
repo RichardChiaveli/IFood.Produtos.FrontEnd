@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">IFood.Produtos.FrontEnd</a>
+  <div class="form-inline">
+    <button
+      [hidden]="showLogoutButton()"
+      class="btn btn-outline-danger my-2 my-sm-0"
+      (click)="deslogar()"
+    >
+      Deslogar
+    </button>
+  </div>
+</nav>
+<router-outlet></router-outlet>

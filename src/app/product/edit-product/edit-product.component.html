@@ -1,0 +1,82 @@
+<div class="col-md-6 product-container">
+  <h2 class="text-center">Edição do Produto</h2>
+  <button
+    type="button"
+    class="btn btn-outline-secondary btn-back"
+    (click)="back()"
+  >
+    Voltar
+  </button>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="d-none">
+      <input
+        type="text"
+        formControlName="id"
+        placeholder="Id"
+        name="id"
+        class="form-control"
+        id="id"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descrição:</label>
+      <input
+        type="text"
+        formControlName="description"
+        placeholder="Descrição"
+        name="description"
+        class="form-control"
+        id="description"
+      />
+      <div
+        class="error"
+        *ngIf="
+          editForm.controls['description'].hasError('required') &&
+          editForm.controls['description'].touched
+        "
+      >
+        Descrição é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagem:</label>
+      <input
+        type="file"
+        formControlName="image"
+        placeholder="Imagem"
+        name="image"
+        class="form-control"
+        id="image"
+        (change)="handleFileInput($event.target.files)"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="value">Valor:</label>
+      <input
+        type="number"
+        step="0.01"
+        formControlName="value"
+        placeholder="Valor"
+        name="value"
+        class="form-control"
+        id="value"
+      />
+      <div
+        class="error"
+        *ngIf="
+          editForm.controls['value'].hasError('required') &&
+          editForm.controls['value'].touched
+        "
+      >
+        Valor é obrigatório
+      </div>
+    </div>
+
+    <button class="btn btn-outline-success" [disabled]="editForm.invalid">
+      Atualizar
+    </button>
+  </form>
+</div>

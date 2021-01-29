@@ -1,0 +1,70 @@
+<div class="col-md-6 product-container">
+  <h2 class="text-center">Inserção de Produto</h2>
+  <button
+    type="button"
+    class="btn btn-outline-secondary btn-back"
+    (click)="back()"
+  >
+    Voltar
+  </button>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="description">Descrição:</label>
+      <input
+        type="text"
+        formControlName="description"
+        placeholder="Descrição"
+        name="description"
+        class="form-control"
+        id="description"
+        autocomplete="off"
+      />
+      <div
+        class="error"
+        *ngIf="
+          addForm.controls['description'].hasError('required') &&
+          addForm.controls['description'].touched
+        "
+      >
+        Descrição é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagem:</label>
+      <input
+        type="file"
+        formControlName="image"
+        placeholder="Imagem"
+        name="image"
+        class="form-control"
+        id="image"
+        (change)="handleFileInput($event.target.files)"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="value">Valor:</label>
+      <input
+        type="number"
+        step="0.01"
+        formControlName="value"
+        placeholder="Valor"
+        name="value"
+        class="form-control"
+        id="value"
+      />
+      <div
+        class="error"
+        *ngIf="
+          addForm.controls['value'].hasError('required') &&
+          addForm.controls['value'].touched
+        "
+      >
+        Valor é obrigatório
+      </div>
+    </div>
+
+    <button class="btn btn-outline-success" [disabled]="addForm.invalid">Adicionar</button>
+  </form>
+</div>

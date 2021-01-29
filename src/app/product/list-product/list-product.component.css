@@ -1,0 +1,19 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.product-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.btn-add-product {
+  max-width: 200px;
+  margin: 5px 0px;
+}
+
+.btn-edit-product {
+  margin: 5px 5px;
+}

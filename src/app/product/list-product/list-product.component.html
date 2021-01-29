@@ -1,0 +1,43 @@
+<div class="col-md-6 product-container">
+  <h2 style="margin: auto">Listagem de Produtos</h2>
+
+  <button
+    class="btn btn-outline-primary btn-add-product"
+    (click)="addProduct()"
+  >
+    Adicionar Produto
+  </button>
+  <table class="table table-sm table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th class="d-none">Id</th>
+        <th>Descrição</th>
+        <th>Imagem</th>
+        <th>Valor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td class="d-none">{{ product.idProduto }}</td>
+        <td>{{ product.descricao }}</td>
+        <td><img [src]="product.imagem" class="product-image" /></td>
+        <td>{{ product.valor }}</td>
+        <td>
+          <button
+            class="btn btn-outline-danger"
+            (click)="deleteProduct(product)"
+          >
+            Deletar
+          </button>
+          <button
+            class="btn btn-outline-warning btn-edit-product"
+            (click)="editProduct(product)"
+          >
+            Editar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
