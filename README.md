@@ -1,23 +1,24 @@
-# Angular8Demo
+# IFood.Produtos.FrontEnd
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.6.
+Este é o projeto FrontEnd do Sistema IFood.Produtos
 
-## Other Angular Resources
+## Instalação das dependências
 
-[Spring Boot Angular 8](https://www.devglan.com/spring-boot/spring-boot-angular-8-example)
+```
+:: Instala as dependências do Projeto
 
-[Angular 7 CRUD Example](https://www.devglan.com/angular/angular-7-crud-example)
+npm cache clean --force
+npm install
+```
 
-[Angular 6 CRUD](https://www.devglan.com/angular/angular-6-example)
+## Configuração de variavéis de ambiente
 
-[Typescript Tutorial](https://www.devglan.com/angular/typescript-tutorial)
+As configurações de rotas das API de Produtos e Login podem ser alteradas em: <b>/src/environments/</b>
 
-[Angular Multiple File Upload](https://www.devglan.com/angular/angular-multiple-file-upload)
+## Rodando o Projeto
 
-[Angular Universal Server Side Rendering](https://www.devglan.com/angular/angular-universal-server-side-rendering)
+```
+:: Inicialização do Projeto
 
-[Spring Boot Angular Captcha](https://www.devglan.com/angular/spring-boot-angular-captcha)
-
-[Deploying Angular App on Nginx](https://www.devglan.com/angular/deploy-angular-app-nginx)
-
-
+npm start
+```
